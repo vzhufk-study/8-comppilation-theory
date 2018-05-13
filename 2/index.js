@@ -6,11 +6,11 @@ let D = line => {
   return line.replace(/^[123]+/, "");
 };
 let V = line => {
-  let match = line.match(/^[abc]/);
+  let match = line.match(/^[abct]/);
   if (!match) {
     throw new Error("Failed at V.");
   }
-  line = line.replace(/^[abc]/, "");
+  line = line.replace(/^[abct]/, "");
   return D(line);
 };
 let C = line => {
@@ -73,23 +73,38 @@ let P = line => {
   throw new Error("Failed at P.");
 };
 
-fs = require("fs");
-fs.readFile(
-  "C:/Users/vzhufk/Documents/Projects/compilation/lines.txt",
-  "utf8",
-  function(err, data) {
-    if (err) {
-      return console.log(err);
-    }
-    data = data.split("\n");
-    for (let i of data) {
-      try {
-        console.error(S(i));
-        console.log("+:" + i);
-      } catch (e) {
-        console.log("-:" + i);
-        console.error(e);
+let get_token = line => {
+  const t = {
+    key_word: /^(if|then|else)/g,
+    identifier: /^([abct][123])+/g,
+    number: /^([123])+/g,
+    operation: /^(:=|>=|=<)/g,
+    symbol: /^\s/g,
+    rest: /^./g
+  };
+  let result = [];
+
+  while (line) {
+    (() => {
+      for (let i in t) {
+        let c = line.match(t[i]);
+        if (c) {
+          result.push({ value: c[0], type: i });
+          line = line.replace(t[i], "");
+          return;
+        }
       }
-    }
+    })();
   }
-);
+
+  result.toString = function() {
+    let s = "";
+    for (let i of this) {
+      s += `< ${i.type}, ${i.value}> `;
+    }
+    return s;
+  };
+
+  return result;
+};
+module.exports = { run: S, get_token };
