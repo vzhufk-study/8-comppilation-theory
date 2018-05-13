@@ -1,0 +1,2 @@
+< key_word, xor> < indetefier, xzy> < key_word, no> < key_word, yes> 
+< indetefier, xxxxx1> < key_word, no> < key_word, xor> < key_word, yes> < indetefier, yyy> 
