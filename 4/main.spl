@@ -3,5 +3,10 @@ begin
     int n, m;
     read n;
     read m;
-    print(n * 1000 / m) % 10
+    print task(n,m)
+end
+
+task(n,m)
+begin
+    return (n * 1000 / m) % 10
 end
