@@ -1,0 +1,6 @@
+if a1>=a2 then a1:=a2 else a2:=1
+if a1>=a2 then a1:=a2 else aa2:=b1
+if a1>=a2 then a1:=a2 else if a1>=a2 then a1:=a2 else a2:=a1
+if a1>=a2 then a1:=a2 else if a1>=a2 then a1:=a2 
+if a1>=a2 then a1:=a2 else if a1>=a2 then a1:=a2 else a2:=b1
+if a1>=a2 then a1:=a2 else if a1>=a2 then a1:=a2 else a2:=a1 else a3 := 2

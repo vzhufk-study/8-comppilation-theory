@@ -1,0 +1,7 @@
+main()
+begin
+    int n, m;
+    read n;
+    read m;
+    print(n * 1000 / m) % 10
+end
