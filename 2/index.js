@@ -1,4 +1,5 @@
 let D = line => {
+  // D -> 1D | 2D | 3D |1 | 2 | 3
   let match = line.match(/^[123]+/);
   if (!match) {
     throw new Error("Failed at D.");
@@ -6,6 +7,7 @@ let D = line => {
   return line.replace(/^[123]+/, "");
 };
 let V = line => {
+  //V -> aD | bD | cD | tD
   let match = line.match(/^[abct]/);
   if (!match) {
     throw new Error("Failed at V.");
@@ -14,6 +16,7 @@ let V = line => {
   return D(line);
 };
 let C = line => {
+  // C -> V>=V | V=<V
   line = V(line);
   let match = line.match(/^(>=|=<)/);
   if (!match) {
@@ -23,6 +26,7 @@ let C = line => {
   return V(line);
 };
 let S = line => {
+  // S -> if C then P else P;
   let match1 = line.match(/^if /);
   if (!match1) {
     throw new Error("Failed at S.");
@@ -43,6 +47,7 @@ let S = line => {
   return P(line);
 };
 let P = line => {
+  // P -> V:=V | V:=D | S
   let v1 = line;
   try {
     v1 = V(v1);

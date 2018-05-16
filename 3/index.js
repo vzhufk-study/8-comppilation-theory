@@ -92,7 +92,17 @@ let run = line => {
     let value = "";
     let shift = line.shift();
     let currentState = S(shift);
+    let early = "";
+    let earlyState;
     while (isFunction(currentState)) {
+      if (
+        isFunction(currentState) &&
+        currentState("") &&
+        currentState("").length
+      ) {
+        earlyState = currentState("");
+        early = value + shift;
+      }
       value += shift;
       shift = line.shift();
       currentState = currentState(shift);
@@ -104,7 +114,14 @@ let run = line => {
     } else if (!line.length) {
       console.log("end");
     } else {
-      console.error("Cant Handle Symbol.");
+      if (value.length) {
+        console.log(`< ${earlyState}, ${early}>`);
+        result.push({ early, type: earlyState });
+        line = [...value.slice(early.length), shift, ...line];
+      } else {
+        console.log(`< ${earlyState}, ${shift}>`);
+        result.push({ shift, type: earlyState });
+      }
     }
   }
   return result;

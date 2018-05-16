@@ -1,0 +1,19 @@
+main()
+begin
+    int n, m;
+    read n;
+    read m;
+    print function(n,m)
+end
+
+function(n,m)
+begin
+    int s;
+    s = 0;
+    while m do
+        s = s + n % 10;
+        n = n / 10;
+        m = m - 1 
+    end;
+    return s
+end
