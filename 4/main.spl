@@ -1,12 +1,35 @@
 main()
 begin
-    int n, m;
+    int n;
+    int i;
+    int result;
     read n;
-    read m;
-    print task(n,m)
+    i = 1;
+    while (n - i) do
+        result = check(i);
+        if result then
+            print i
+        end;
+        i = i + 1
+    end
 end
 
-task(n,m)
+check(n)
 begin
-    return (n * 1000 / m) % 10
+    int k;
+    int flag;
+    int current;
+    k = n;
+    flag = 1;
+    while (k) do
+        current = k % 10;
+        k = k / 10;
+        
+        if (current) then
+            if (n % current) then
+                flag = 0
+            end
+        end
+    end;
+    return flag
 end

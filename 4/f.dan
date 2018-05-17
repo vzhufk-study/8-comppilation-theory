@@ -1,7 +1,10 @@
 Tablytsya TOB dlya funktsiyi main
  0:  name     n  what=3  (lokalna zminna)  val=  1   (zmichenya vidnoslno sp)  
- 1:  name     m  what=3  (lokalna zminna)  val=  2   (zmichenya vidnoslno sp)  
-Tablytsya TOB dlya funktsiyi task
- 0:  name     n  what=3  (lokalna zminna)  val= -4   (zmichenya vidnoslno sp)  
- 1:  name     m  what=3  (lokalna zminna)  val= -3   (zmichenya vidnoslno sp)  
+ 1:  name     i  what=3  (lokalna zminna)  val=  2   (zmichenya vidnoslno sp)  
+ 2:  name result  what=3  (lokalna zminna)  val=  3   (zmichenya vidnoslno sp)  
+Tablytsya TOB dlya funktsiyi check
+ 0:  name     n  what=3  (lokalna zminna)  val= -3   (zmichenya vidnoslno sp)  
+ 1:  name     k  what=3  (lokalna zminna)  val=  1   (zmichenya vidnoslno sp)  
+ 2:  name  flag  what=3  (lokalna zminna)  val=  2   (zmichenya vidnoslno sp)  
+ 3:  name current  what=3  (lokalna zminna)  val=  3   (zmichenya vidnoslno sp)  
 Tablytsya TOB dlya funktsiyi  Vsi globalni zminni spl-programy 

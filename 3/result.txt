@@ -1,1 +1,3 @@
 < indetefier, undefined> < undefined, undefined> < key_word, xor> 
+< indetefier, undefined> < undefined, undefined> < key_word, yes> < indetefier, yyy1> < undefined, undefined> < undefined, undefined> 
+< undefined, undefined> < undefined, undefined> < undefined, undefined> < undefined, undefined> < indetefier, xx1> 

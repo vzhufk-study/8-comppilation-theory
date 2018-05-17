@@ -115,11 +115,15 @@ let run = line => {
       console.log("end");
     } else {
       if (value.length) {
-        console.log(`< ${earlyState}, ${early}>`);
+        if (earlyState) {
+          console.log(`< ${earlyState}, ${early}>`);
+        }
         result.push({ early, type: earlyState });
         line = [...value.slice(early.length), shift, ...line];
       } else {
-        console.log(`< ${earlyState}, ${shift}>`);
+        if (earlyState) {
+          console.log(`< ${earlyState}, ${shift}>`);
+        }
         result.push({ shift, type: earlyState });
       }
     }
